@@ -32,7 +32,7 @@ function Csvcreate()
     {
         Write-Output "No Excel Files Found in Path: $CsvsPath"
     }
-    Else
+    else
     {
         #Input store appendage for new filename
         Write-Output "What is the abbreviated Store Name?"
