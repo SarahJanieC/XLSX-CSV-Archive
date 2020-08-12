@@ -6,8 +6,8 @@ This program serves two main purposes.
 
 
 
-$CsvPath = [Environment]::GetFolderPath("Desktop") + '\AX-Zift Mapping\Incoming'
-$archivePath = [Environment]::GetFolderPath("Desktop") + '\AX-Zift Mapping\Incoming\Archive'
+$CsvPath = [Environment]::GetFolderPath("Desktop") + '\filepath\filepath'
+$archivePath = [Environment]::GetFolderPath("Desktop") + '\filepath\filepath\\archivepath'
 
 #Gets the most recent CSV files in the folder specified by $CsvsPath
 $Files = Get-ChildItem -Path $CsvPath| Where-Object {$_.Extension -like ".xlsx" } |Sort-Object LastWriteTime -Descending | Select-Object -first 10
