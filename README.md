@@ -5,6 +5,10 @@ This program serves two main purposes.
 2. To move xlsx files to archive folder upon completetion. 
 
 
+
+$CsvPath = [Environment]::GetFolderPath("Desktop") + '\AX-Zift Mapping\Incoming'
+$archivePath = [Environment]::GetFolderPath("Desktop") + '\AX-Zift Mapping\Incoming\Archive'
+
 #Gets the most recent CSV files in the folder specified by $CsvsPath
 $Files = Get-ChildItem -Path $CsvPath| Where-Object {$_.Extension -like ".xlsx" } |Sort-Object LastWriteTime -Descending | Select-Object -first 10
 
