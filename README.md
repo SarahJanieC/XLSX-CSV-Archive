@@ -6,11 +6,7 @@ This program serves two main purposes.
 
 
 #Gets the most recent CSV files in the folder specified by $CsvsPath
-
-$Files = Get-ChildItem -Path $CsvPath| 
-            Where-Object {$_.Extension -like ".xlsx" } |
-            Sort-Object LastWriteTime -Descending |
-            Select-Object -first 10
+$Files = Get-ChildItem -Path $CsvPath| Where-Object {$_.Extension -like ".xlsx" } |Sort-Object LastWriteTime -Descending | Select-Object -first 10
 
 function Csvcreate()
 {
