@@ -14,6 +14,7 @@ $Files = Get-ChildItem -Path $CsvPath| Where-Object {$_.Extension -like ".xlsx" 
 
 function Csvcreate()
 {
+
        #Open excel in the background
         $xlsx = New-Object -comobject excel.application
         $xlsx.DisplayAlerts = $False
@@ -32,15 +33,19 @@ function Csvcreate()
         [GC]::Collect()
 }
 
-    if($Files -eq $null)
-    {
+if($Files -eq $null)
+{
+
         Write-Output "No Excel Files Found in Path: $CsvsPath"
-    }
-    else
-    {
+        
+}
+else
+{
+
         #Input store appendage for new filename
         Write-Output "What is the abbreviated Store Name?"
         $store = Read-Host
-
+        
+        #Call function
         Csvcreate
-    }
+}
